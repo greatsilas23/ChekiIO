@@ -2,144 +2,94 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="author" content="greatsilas23">
 	<title>Vehicles for Sale in Kenya</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 	<div id="parent_div">
+		<!-------------------HIDDEN DIALOG BOXES----------------------->
 		<!---------------------CARD DIALOG BOX------------------------>
-		<div id="popup" style="
-			position: fixed;
-			background-color: #555;
-			width: 700px;
-			height: 400px;
-			padding: 20px;
-			z-index: 1;
-			display: none;
-			left: 300px;
-			top: 100px;
-			border-radius: 10px;
-			overflow: scroll;
-		">
+		<div id="popup" class="card_dialog_box">
 			<center>
 				<hr>
 					<p>PURCHASE ITEM</p>
 				<hr>
-				<img src="./Resources/img2.jpg" width="600" height="300" alt=""><br>
+				<img src="./img2.jpg" width="600" height="300" alt=""><br>
 				<p>Price: Ksh. 1,800,00</p>
 				<button>ADD TO CART</button>
 				<button onclick="displayMain()">CLOSE</button>
 			</center>
 		</div>
 		<!---------------------DEALER DIALOG BOX------------------------>
-		<div id="dealer_popup" style="
-			position: fixed;
-			background-color: #555;
-			width: 700px;
-			height: 550px;
-			padding: 20px;
-			z-index: 1;
-			visibility: hidden;
-			left: 300px;
-			top:30px;
-			border-radius: 10px;
-			opacity: 0;
-			transition: visibility 0s, opacity 0.5s linear;
-		">
+		<div id="dealer_popup" class="dealer_dialog_box">
 			<center>
-				<img src="./Resources/img_dealer_1.png" width="250" height="150" alt="">
-					<h4>NISSAN</h4>
-					<hr>
-					<div style="
-						min-width: 600px;
-						max-width: 600px;
-						height: auto;
-						overflow-y: hidden;
-						overflow-x: scroll;
-						display: flex;
-						flex-direction: row;
-					">
-						<div class="card" onclick="displayMain()">
-							<img src="./Resources/img_car.jpeg" width="250" height="150" alt="">
-							<div class="container">
-								<h3><b>Toyota Land Cruiser</b></h3>
-								<p>Ksh. 800,000</p>
-							</div>
+				<img src="./img_dealer_1.png" width="250" height="150" alt="">
+				<h4>NISSAN</h4>
+				<hr>
+				<div class="vehicle_cards_holder" >
+					<div class="card" onclick="displayMain()">
+						<img src="./img_car.jpeg" width="250" height="150" alt="">
+						<div class="container">
+							<h3><b>Toyota Land Cruiser</b></h3>
+							<p>Ksh. 800,000</p>
 						</div>
-						<div class="card" onclick="displayMain()">
-							<img src="./Resources/img4.jpg" width="250" height="150" alt="">
-							<div class="container">
-								<h3><b>Toyota Land Cruiser</b></h3>
-								<p>Ksh. 1,200,000</p>
-							</div>
-						</div>
-						<div class="card" onclick="displayMain()">
-							<img src="./Resources/img5.jpg" width="250" height="150" alt="">
-							<div class="container">
-								<h3><b>Toyota Land Cruiser</b></h3>
-								<p>Ksh. 1,700,000</p>
-							</div>
-						</div>	
-						<div class="card" onclick="displayMain()">
-							<img src="./Resources/img5.jpg" width="250" height="150" alt="">
-							<div class="container">
-								<h3><b>Toyota Land Cruiser</b></h3>
-								<p>Ksh. 1,700,000</p>
-							</div>
-						</div>			
 					</div>
+					<div class="card" onclick="displayMain()">
+						<img src="./img4.jpg" width="250" height="150" alt="">
+						<div class="container">
+							<h3><b>Toyota Land Cruiser</b></h3>
+							<p>Ksh. 1,200,000</p>
+						</div>
+					</div>
+					<div class="card" onclick="displayMain()">
+						<img src="./img5.jpg" width="250" height="150" alt="">
+						<div class="container">
+							<h3><b>Toyota Land Cruiser</b></h3>
+							<p>Ksh. 1,700,000</p>
+						</div>
+					</div>	
+					<div class="card" onclick="displayMain()">
+						<img src="./img5.jpg" width="250" height="150" alt="">
+						<div class="container">
+							<h3><b>Toyota Land Cruiser</b></h3>
+							<p>Ksh. 1,700,000</p>
+						</div>
+					</div>			
+				</div>
 				<button onclick="displayDealer()">CLOSE</button>
 			</center>
 		</div>
 		<!---------------------VEHICLE TYPE DIALOG BOX------------------------>
-		<div id="vehicle_type_popup" style="
-			position: fixed;
-			background-color: #555;
-			width: 700px;
-			height: 550px;
-			padding: 20px;
-			z-index: 1;
-			display: none;
-			left: 300px;
-			top:30px;
-			border-radius: 10px;
-		">
+		<div id="vehicle_type_popup" class="vehicle_type_dialog">
 			<center>
-				<img src="./Resources/car_type_3.png" width="215" height="160" alt="">
+				<img src="./car_type_3.png" width="215" height="160" alt="">
 					<h4>4WD Vehicles</h4>
 					<hr>
-					<div style="
-						min-width: 600px;
-						max-width: 600px;
-						height: auto;
-						overflow-y: hidden;
-						overflow-x: scroll;
-						display: flex;
-						flex-direction: row;
-					">
+					<div class="vehicle_type_card_holder">
 						<div class="card" onclick="displayMain()">
-							<img src="./Resources/img_car.jpeg" width="250" height="150" alt="">
+							<img src="./img_car.jpeg" width="250" height="150" alt="">
 							<div class="container">
 								<h3><b>Toyota Land Cruiser</b></h3>
 								<p>Ksh. 800,000</p>
 							</div>
 						</div>
 						<div class="card" onclick="displayMain()">
-							<img src="./Resources/img4.jpg" width="250" height="150" alt="">
+							<img src="./img4.jpg" width="250" height="150" alt="">
 							<div class="container">
 								<h3><b>Toyota Land Cruiser</b></h3>
 								<p>Ksh. 1,200,000</p>
 							</div>
 						</div>
 						<div class="card" onclick="displayMain()">
-							<img src="./Resources/img5.jpg" width="250" height="150" alt="">
+							<img src="./img5.jpg" width="250" height="150" alt="">
 							<div class="container">
 								<h3><b>Toyota Land Cruiser</b></h3>
 								<p>Ksh. 1,700,000</p>
 							</div>
 						</div>	
 						<div class="card" onclick="displayMain()">
-							<img src="./Resources/img5.jpg" width="250" height="150" alt="">
+							<img src="./img5.jpg" width="250" height="150" alt="">
 							<div class="container">
 								<h3><b>Toyota Land Cruiser</b></h3>
 								<p>Ksh. 1,700,000</p>
@@ -149,9 +99,10 @@
 				<button onclick="displayVehicleTypes()">CLOSE</button>
 			</center>
 		</div>
+		<!------------VISIBLE ELEMENTS ON THE PAGE------------------>
 		<!-------------------------TOP AREA--------------------------------->
 		<div id="top_bar">
-			<h3 id="loggedIn">Please log in</h3>
+	
 			<div id="item_1_1" >
 				<a href="#contact_us">Contact us</a>
 			</div>
@@ -167,6 +118,7 @@
 		</div>
 		<!-----------------------NAVIAGTION AREA------------------------------>
 		<div id="top_bar_2">
+			<!-------------MORE HIDDEN POPUP DIALOGS-->
 			<!--LOGIN POPUP-->
 			<div id="login_form">
 				<form id="login_details_form" onsubmit="event.preventDefault()" autocomplete="off">
@@ -213,8 +165,9 @@
 					<p id="var_err"></p>
 				</form>
 			</div>
+			<!----------------NAVIGATION AREA------------------>
 			<div id="icon">
-				<p>cheki</p><p class="small" >.co.ke</p>	
+				<p>magari</p><p class="small" >.co.ke</p>	
 			</div>
 			<div id="item_2_1" >
 				<a href="#new_cars" >New Cars</a>
@@ -244,22 +197,8 @@
 		</div>
 		<!-------------------------NAVIGATION AREA------------------------------>
 		<div id="top_bar_3">
-			<!------------------------REQUEST A CAR--------------------------->
-			<div id="car_loans_form_8" 
-			style="
-				padding: 20px;
-				width: 270px;
-				height: 190px;
-				border-radius: 10px;
-				background-color: #007700;
-				z-index: 1;
-				position: absolute;
-				margin-top: 10px;
-				margin-left: 890px;
-				display: none;
-				border: 2px solid #fff;
-				box-sizing: border-box;
-			">
+			<!------------------------REQUEST A CAR DIALOG--------------------------->
+			<div id="car_loans_form_8" class="request_car_form">
 				<form id="loan_details_form" onsubmit="event.preventDefault()" autocomplete="off">
 					<label>Car Make</label><br>
 					<input id="car_make" type="text" placeholder="example: Subaru"><br>
@@ -272,22 +211,8 @@
 				</form>
 			</div>
 
-			<!--------SELL A CAR---------->
-			<div id="car_loans_form_10" 
-			style="
-				padding: 20px;
-				width: 270px;
-				height: 190px;
-				border-radius: 10px;
-				background-color: #007700;
-				z-index: 1;
-				position: absolute;
-				margin-top: 10px;
-				margin-left: 990px;
-				display: none;
-				border: 2px solid #fff;
-				box-sizing: border-box;
-			">
+			<!--------SELL A CAR DIALOG---------->
+			<div id="car_loans_form_10" class="sell_car_form">
 				<form id="loan_details_form" onsubmit="event.preventDefault()" autocomplete="off">
 					<label>Car Make</label><br>
 					<input id="car_make" type="text" placeholder="example: Subaru"><br>
@@ -305,13 +230,13 @@
 			<div id="insurance_form">
 				<div class="insur">
 					<div class="tile">
-						<img src="./Resources/aaa_insurance.gif" width="250" height="50" alt="">
+						<img src="./aaa_insurance.gif" width="250" height="50" alt="">
 					</div>
 					<div class="tile">
-						<img src="./Resources/allstate_insurance.png" width="250" height="50" alt="">
+						<img src="./allstate_insurance.png" width="250" height="50" alt="">
 					</div>
 					<div class="tile">
-						<img src="./Resources/nationwide.jpeg" width="250" height="50" alt="">
+						<img src="./nationwide.jpeg" width="250" height="50" alt="">
 					</div>
 				</div>
 			</div>
@@ -386,35 +311,35 @@
 		</div>
 		<!-----------------------SECTION SEPARATOR--------------------------------->
 		<div class="section_separator">
-			<center>
+			
 				<h3>Featured</h3>
-			</center>			
+				
 		</div>
 		<!--------------------FEATURED CARDVIEWS---------------------------->	
 		<div id="featured_cars" class="featured_cars">
 			<div class="card" onclick="displayMain()">
-				<img src="./Resources/img_car.jpeg" width="250" height="150" alt="">
+				<img src="./img_car.jpeg" width="250" height="150" alt="">
 				<div class="container">
 					<h3><b>Toyota Land Cruiser</b></h3>
 					<p>Ksh. 800,000</p>
 				</div>
 			</div>
 			<div class="card" onclick="displayMain()">
-				<img src="./Resources/img2.jpg" width="250" height="150" alt="">
+				<img src="./img2.jpg" width="250" height="150" alt="">
 				<div class="container">
 					<h3><b>Toyota Land Cruiser</b></h3>
 					<p>Ksh. 1,800,000</p>
 				</div>
 			</div>
 			<div class="card" onclick="displayMain()">
-				<img src="./Resources/img4.jpg" width="250" height="150" alt="">
+				<img src="./img4.jpg" width="250" height="150" alt="">
 				<div class="container">
 					<h3><b>Toyota Land Cruiser</b></h3>
 					<p>Ksh. 1,200,000</p>
 				</div>
 			</div>		
 			<div class="card" onclick="displayMain()">
-				<img src="./Resources/img5.jpg" width="250" height="150" alt="">
+				<img src="./img5.jpg" width="250" height="150" alt="">
 				<div class="container">
 					<h3><b>Toyota Land Cruiser</b></h3>
 					<p>Ksh. 1,700,000</p>
@@ -423,35 +348,35 @@
 		</div>
 		<!-----------------------SECTION SEPARATOR--------------------------------->
 		<div id="new_cars" class="section_separator">
-			<center>
+			
 				<h3>New</h3>
-			</center>			
+				
 		</div>
 		<!--------------------FEATURED CARDVIEWS---------------------------->	
 		<div class="featured_cars">
 			<div class="card" onclick="displayMain()">
-				<img src="./Resources/img_car.jpeg" width="250" height="150" alt="">
+				<img src="./img_car.jpeg" width="250" height="150" alt="">
 				<div class="container">
 					<h3><b>Toyota Land Cruiser</b></h3>
 					<p>Ksh. 800,000</p>
 				</div>
 			</div>
 			<div class="card" onclick="displayMain()">
-				<img src="./Resources/img2.jpg" width="250" height="150" alt="">
+				<img src="./img2.jpg" width="250" height="150" alt="">
 				<div class="container">
 					<h3><b>Toyota Land Cruiser</b></h3>
 					<p>Ksh. 800,000</p>
 				</div>
 			</div>
 			<div class="card" onclick="displayMain()">
-				<img src="./Resources/img4.jpg" width="250" height="150" alt="">
+				<img src="./img4.jpg" width="250" height="150" alt="">
 				<div class="container">
 					<h3><b>Toyota Land Cruiser</b></h3>
 					<p>Ksh. 800,000</p>
 				</div>
 			</div>	
 			<div class="card" onclick="displayMain()">
-				<img src="./Resources/img5.jpg" width="250" height="150" alt="">
+				<img src="./img5.jpg" width="250" height="150" alt="">
 				<div class="container">
 					<h3><b>Toyota Land Cruiser</b></h3>
 					<p>Ksh. 800,000</p>
@@ -460,32 +385,32 @@
 		</div>
 		<!-----------------------SECTION SEPARATOR--------------------------------->
 		<div id="dealers" class="section_separator">
-			<center>
+			
 				<h3>Dealer Partners</h3>
-			</center>			
+				
 		</div>
 		<!----------------------------VEHICLE DEALERS----------------------------------->
 		<div id="dealer_partners">
 			<div class="dealers_card" onclick="displayDealer()">
-				<img src="./Resources/img_dealer_1.png" width="250" height="150" alt="">
+				<img src="./img_dealer_1.png" width="250" height="150" alt="">
 				<div class="dealer_tag">
 					<h4>NISSAN</h4>
 				</div>
 			</div>	
 			<div class="dealers_card" onclick="displayDealer()">
-				<img src="./Resources/img_dealer_2.jpg" width="250" height="150" alt="">
+				<img src="./img_dealer_2.jpg" width="250" height="150" alt="">
 				<div class="dealer_tag">
 					<h4>TOYOTA</h4>
 				</div>
 			</div>	
 			<div class="dealers_card" onclick="displayDealer()">
-				<img src="./Resources/img_dealer_3.jpg" width="250" height="150" alt="">
+				<img src="./img_dealer_3.jpg" width="250" height="150" alt="">
 				<div class="dealer_tag">
 					<h4>SUBARU</h4>
 				</div>
 			</div>	
 			<div class="dealers_card" onclick="displayDealer()">
-				<img src="./Resources/img_dealer_4.png" width="250" height="150" alt="">
+				<img src="./img_dealer_4.png" width="250" height="150" alt="">
 				<div class="dealer_tag">
 					<h4>MISTUBISHI</h4>
 				</div>
@@ -494,38 +419,38 @@
 		</div>
 		<!-----------------------SECTION SEPARATOR--------------------------------->
 		<div class="section_separator">
-			<center>
+			
 				<h3>Vehicle Types</h3>
-			</center>			
+				
 		</div>
 		<!-----------------------VEHICLE TYPES--------------------------------->
 		<div id="vehicle_types">
 			<div class="car_type" onclick="displayVehicleTypes()">
-				<img src="./Resources/car_type_1.png" width="215" height="160" alt="">
+				<img src="./car_type_1.png" width="215" height="160" alt="">
 				<div class="dealer_tag">
 					<h4>STATION WAGON</h4>
 				</div>
 			</div>	
 			<div class="car_type" onclick="displayVehicleTypes()">
-				<img src="./Resources/car_type_2.png" width="215" height="160" alt="">
+				<img src="./car_type_2.png" width="215" height="160" alt="">
 				<div class="dealer_tag">
 					<h4>SALOON CAR</h4>
 				</div>
 			</div>	
 			<div class="car_type" onclick="displayVehicleTypes()">
-				<img src="./Resources/car_type_3.png" width="215" height="160" alt="">
+				<img src="./car_type_3.png" width="215" height="160" alt="">
 				<div class="dealer_tag">
 					<h4>4WD CARS</h4>
 				</div>
 			</div>	
 			<div class="car_type" onclick="displayVehicleTypes()">
-				<img src="./Resources/car_type_4.png" width="215" height="160" alt="">
+				<img src="./car_type_4.png" width="215" height="160" alt="">
 				<div class="dealer_tag">
 					<h4>4WD CARS</h4>
 				</div>
 			</div>	
 			<div class="car_type">
-				<img src="./Resources/car_type_5.webp" width="215" height="160" alt="">
+				<img src="./car_type_5.webp" width="215" height="160" alt="">
 				<div class="dealer_tag">
 					<h4>ELECTRIC CARS</h4>
 				</div>
@@ -533,86 +458,79 @@
 		</div>
 		<!-----------------------SECTION SEPARATOR--------------------------------->
 		<div class="section_separator">
-			<center>
+			
 				<h3>Location</h3>
-			</center>			
+				
 		</div>
 		<!-----------------------BRANCH LOCATIONS--------------------------------->
 		<div class="locations">
-			<img src="./Resources/location_icon.jpg" alt="" width="50" height="50">
+			<img src="./location_icon.jpg" alt="" width="50" height="50">
 			<h3>Kisumu</h3>
 
-			<img src="./Resources/location_icon.jpg" alt="" width="50" height="50">
+			<img src="./location_icon.jpg" alt="" width="50" height="50">
 			<h3>Nairobi</h3>
 
-			<img src="./Resources/location_icon.jpg" alt="" width="50" height="50">
+			<img src="./location_icon.jpg" alt="" width="50" height="50">
 			<h3>Mombasa</h3>
 
-			<img src="./Resources/location_icon.jpg" alt="" width="50" height="50">
+			<img src="./location_icon.jpg" alt="" width="50" height="50">
 			<h3>Nakuru</h3>
 
-			<img src="./Resources/location_icon.jpg" alt="" width="50" height="50">
+			<img src="./location_icon.jpg" alt="" width="50" height="50">
 			<h3>Eldoret</h3>
 
-			<img src="./Resources/location_icon.jpg" alt="" width="50" height="50">
+			<img src="./location_icon.jpg" alt="" width="50" height="50">
 			<h3>Thika</h3>
 
-			<img src="./Resources/location_icon.jpg" alt="" width="50" height="50">
+			<img src="./location_icon.jpg" alt="" width="50" height="50">
 			<h3>Lamu</h3>
 
-			<img src="./Resources/location_icon.jpg" alt="" width="50" height="50">
+			<img src="./location_icon.jpg" alt="" width="50" height="50">
 			<h3>Kisii</h3>
 
-			<img src="./Resources/location_icon.jpg" alt="" width="50" height="50">
+			<img src="./location_icon.jpg" alt="" width="50" height="50">
 			<h3>Meru</h3>
 
-			<img src="./Resources/location_icon.jpg" alt="" width="50" height="50">
+			<img src="./location_icon.jpg" alt="" width="50" height="50">
 			<h3>Murang'a</h3>
 		</div>
 		<!-----------------------SECTION SEPARATOR--------------------------------->
 		<div id="reviews_section" class="section_separator">
-			<center>
+			
 				<h3>Reviews</h3>
-			</center>			
+				
 		</div>
 		<!--------------------------Reviews---------------------------------------->
 		<div class="review_items">
 			<div class="review"><p>This website is amazing, I bought a second-hand vehicle in good condition </p></div>
-			<!-- <div class="review_1"><p>For anyone looking for a fast way to purchase, this is the place</p></div> -->
+			<div class="review_2"><p>For anyone looking for a fast way to purchase, this is the place</p></div>
 		</div>
 		<!-----------------------SECTION SEPARATOR--------------------------------->
 		<div id="blogs" class="section_separator">
-			<center>
+			
 				<h3>Out Latest Posts</h3>
-			</center>			
+				
 		</div>
 		<!-----------------------NEWS BYTES--------------------------------->
 		<div class="posts">
-			<div id="my details" 
-				style="
-					width: 400px;
-					height: 400px;
-					background-color: #555;
-					border-radius: 10px;
-				"
-			>
+			<div id="my details" class="news_bytes">
 				<img src="" alt="owner" width="300" height="300">
 				<p>Hello world</p>
 			</div>
 			<div class="card">
-				<img src="./Resources/post_1.png" width="250" height="150" alt="">
+				<img src="./post_1.png" width="250" height="150" alt="">
 				<div class="container">
 					<h3><b>Rising Fuel Prices In The Continent</b></h3>
 				</div>
 			</div>		
 			<div class="card">
-				<img src="./Resources/post_2.jpeg" width="250" height="150" alt="">
+				<img src="./post_2.jpeg" width="250" height="150" alt="">
 				<div class="container">
 					<h3><b>Reckless Driving In Sub-urban Areas</b></h3>
 				</div>
 			</div>
 			<div class="card">
-				<img src="./Resources/post_3.jpeg" width="250" height="150" alt="">
+				<img src="./post_3.jpeg" width="250" height="150" alt="">
 				<div class="container">
 					<h3><b>Construction Of New Expressway</b></h3>
 				</div>
@@ -620,20 +538,20 @@
 		</div>
 		<!-----------------------SECTION SEPARATOR--------------------------------->
 		<div class="section_separator">
-			<center>
+			
 				<h3>Contact Us</h3>
-			</center>			
+				
 		</div>
 		<!------------------------------CONTACT US-------------------------------->
 		<div id="contact_us">
 			<div class="card">
-				<img src="./Resources/instagram.png" width="150" height="150" alt="">
+				<img src="./instagram.png" width="150" height="150" alt="">
 				<div id="gram">
 					<h3>@silas.n_</h3>
 				</div>
 			</div>
 			<div id="details_card" class="card">
-				<img src="./Resources/facebook.png" width="200" height="150" alt="">
+				<img src="./facebook.png" width="200" height="150" alt="">
 				<div id="gram">
 					<h3>@Silas Nyamwange</h3>
 				</div>
