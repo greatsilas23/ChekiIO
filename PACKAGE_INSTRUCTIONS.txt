@@ -1,0 +1,7 @@
+Date created:  
+Date modified: 23 Sep, 2021
+
+Arrange  as follows:
+i. Extract the files you downloaded from ChekiIO.zip
+ii. Open the ChekiIO folder and locate cheki_co_ke_clone.html
+iii. Open the file in a web browser
