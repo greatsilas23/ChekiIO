@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="author" content="greatsilas23">
-	<title>Vehicles for Sale in Kenya</title>
+	<title>Magari</title>
 	<link rel="stylesheet" href="styles.css">
 	<link rel="icon" href="./car_type_2.png">
 </head>
@@ -105,16 +105,19 @@
 		<div id="top_bar">
 	
 			<div id="item_1_1" >
-				<a href="#contact_us">Contact us</a>
+				<a href="#contact_us">
+					<img src="./feedback.jpg" width="30" height="30" alt=""/>
+				</a>
 			</div>
 			<div id="item_1_2" onclick="display_registration()">
-				<a>Register</a>
+				<a>
+					<img src="./register.png" width="30" height="30" alt="" />
+				</a>
 			</div>
 			<div id="item_1_3" onclick="display_login()">
-				<a>Login</a>
-			</div>
-			<div id="item_1_4" onclick="display_dealer_login()">
-				<a>Login Dealer</a>
+				<a>
+					<img src="login.png" width="30" height="30" alt="" />
+				</a>
 			</div>
 		</div>
 		<!-----------------------NAVIAGTION AREA------------------------------>
@@ -170,24 +173,22 @@
 			<div id="icon">
 				<p>magari</p><p class="small" >.co.ke</p>	
 			</div>
-			<div id="item_2_1" >
-				<a href="#new_cars" >New Cars</a>
+			<div id="item_2_2" onclick="display_insurers()">
+				<a>
+					<img src="./car_type_1.png" width="30" height="30" alt="">
+				</a>
 			</div>
 			<div id="item_2_2" onclick="display_insurers()">
-				<a>Insurance</a>
+				<a>
+					<img src="./insurance.png" width="30" height="30" alt="">
+				</a>
 			</div>
 			<div id="item_2_3" onclick="display_car_loan_form()">
-				<a>Car Loans</a>
+				<a>
+					<img src="./loan_icon.png" width="30" height="30">
+				</a>
 			</div>
-			<div id="item_2_4" >
-				<a href="#dealers" >Winning Dealer</a>
-			</div>
-			<div id="item_2_5" >
-				<a href="#reviews_section" >Reviews</a>
-			</div>
-			<div id="item_2_6" >
-				<a href="#blogs" >Blog</a>
-			</div>
+			
 			<div id="top_bar_2_bn" >
 				<button class="top_bar_2" onclick="showRequestCarForm()">Request a car</button>
 			</div>
@@ -198,6 +199,7 @@
 		</div>
 		<!-------------------------NAVIGATION AREA------------------------------>
 		<div id="top_bar_3">
+	
 			<!------------------------REQUEST A CAR DIALOG--------------------------->
 			<div id="car_loans_form_8" class="request_car_form">
 				<form id="loan_details_form" onsubmit="event.preventDefault()" autocomplete="off">
@@ -258,16 +260,17 @@
 					<p id="var_err"></p>
 				</form>
 			</div>
+			
 			<!--------------------TABBED MENU-------------------------------->
 			<div id="tabbed_menu">
 				<div id="btns">
-					<button class="tablink tablink-left" id="defaultOpen" onclick="openOption('used',this,'black');">
+					<button class="tablink tablink-left" id="defaultOpen" onclick="openOption('used',this,'#007700');">
 						USED
 					</button>
-					<button class="tablink" onclick="openOption('new',this,'black');">
+					<button class="tablink" onclick="openOption('new',this,'#007700');">
 						NEW
 					</button>
-					<button class="tablink tablink-right" onclick="openOption('import',this,'black');">
+					<button class="tablink tablink-right" onclick="openOption('import',this,'#007700');">
 						IMPORT
 					</button>
 				</div>
@@ -309,98 +312,35 @@
 					</center>
 				</div>
 			</div>
-		</div>
-		<!-----------------------SECTION SEPARATOR--------------------------------->
-		<div class="section_separator">
 			
-				<h3>Featured</h3>
-				
 		</div>
-		<!--------------------FEATURED CARDVIEWS---------------------------->	
-		<div id="featured_cars" class="featured_cars">
-			<div class="card" onclick="displayMain()">
-				<img src="./img_car.jpeg" width="250" height="150" alt="">
-				<div class="container">
-					<h3><b>Toyota Land Cruiser</b></h3>
-					<p>Ksh. 800,000</p>
-				</div>
-			</div>
-			<div class="card" onclick="displayMain()">
-				<img src="./img2.jpg" width="250" height="150" alt="">
-				<div class="container">
-					<h3><b>Toyota Land Cruiser</b></h3>
-					<p>Ksh. 1,800,000</p>
-				</div>
-			</div>
-			<div class="card" onclick="displayMain()">
-				<img src="./img4.jpg" width="250" height="150" alt="">
-				<div class="container">
-					<h3><b>Toyota Land Cruiser</b></h3>
-					<p>Ksh. 1,200,000</p>
-				</div>
-			</div>		
-			<div class="card" onclick="displayMain()">
-				<img src="./img5.jpg" width="250" height="150" alt="">
-				<div class="container">
-					<h3><b>Toyota Land Cruiser</b></h3>
-					<p>Ksh. 1,700,000</p>
-				</div>
-			</div>			
-		</div>
-		<!-----------------------SECTION SEPARATOR--------------------------------->
-		<div id="new_cars" class="section_separator">
-			
-				<h3>New</h3>
-				
-		</div>
-		<!--------------------FEATURED CARDVIEWS---------------------------->	
-		<div class="featured_cars">
-			<div class="card" onclick="displayMain()">
-				<img src="./img_car.jpeg" width="250" height="150" alt="">
-				<div class="container">
-					<h3><b>Toyota Land Cruiser</b></h3>
-					<p>Ksh. 800,000</p>
-				</div>
-			</div>
-			<div class="card" onclick="displayMain()">
-				<img src="./img2.jpg" width="250" height="150" alt="">
-				<div class="container">
-					<h3><b>Toyota Land Cruiser</b></h3>
-					<p>Ksh. 800,000</p>
-				</div>
-			</div>
-			<div class="card" onclick="displayMain()">
-				<img src="./img4.jpg" width="250" height="150" alt="">
-				<div class="container">
-					<h3><b>Toyota Land Cruiser</b></h3>
-					<p>Ksh. 800,000</p>
-				</div>
+		<section style="display: flex; flex-direction: row;">
+			<div style="margin: 70px;" class="car_type" onclick="displayVehicleTypes()">
+				<img src="./car_type_1.png" width="90" height="90" alt="">
 			</div>	
-			<div class="card" onclick="displayMain()">
-				<img src="./img5.jpg" width="250" height="150" alt="">
-				<div class="container">
-					<h3><b>Toyota Land Cruiser</b></h3>
-					<p>Ksh. 800,000</p>
-				</div>
-			</div>		
-		</div>
-		<!-----------------------SECTION SEPARATOR--------------------------------->
-		<div id="dealers" class="section_separator">
-			
-				<h3>Dealer Partners</h3>
-				
-		</div>
+			<div style="margin: 70px;" class="car_type" onclick="displayVehicleTypes()">
+				<img src="./car_type_2.png" width="90" height="90" alt="">
+			</div>	
+			<div style="margin: 70px;" class="car_type" onclick="displayVehicleTypes()">
+				<img src="./car_type_3.png" width="90" height="90" alt="">
+			</div>	
+			<div style="margin: 70px;" class="car_type" onclick="displayVehicleTypes()">
+				<img src="./car_type_4.png" width="90" height="90" alt="">
+			</div>	
+			<div style="margin: 70px;" class="car_type">
+				<img src="./car_type_5.webp" width="90" height="90" alt="">
+			</div>
+		</section>
+		
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#007700" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>				
 		<!----------------------------VEHICLE DEALERS----------------------------------->
 		<div id="dealer_partners">
-			<fieldset class="show_winner">
-				<legend class="show_winner_legend">WINNNING DEALER</legend>
 				<div class="dealers_card" onclick="displayDealer()">
 					<img src="./img_dealer_1.png" width="250" height="150" alt="">
 					<div class="dealer_tag">
 						<h4>NISSAN</h4>
 					</div>
 				</div>	
-			</fieldset>
 			<div class="dealers_card" onclick="displayDealer()">
 				<img src="./img_dealer_2.jpg" width="250" height="150" alt="">
 				<div class="dealer_tag">
@@ -421,106 +361,12 @@
 			</div>
 			
 		</div>
-		<!-----------------------SECTION SEPARATOR--------------------------------->
-		<div class="section_separator">
-			
-				<h3>Vehicle Types</h3>
-				
-		</div>
-		<!-----------------------VEHICLE TYPES--------------------------------->
-		<div id="vehicle_types">
-			<div class="car_type" onclick="displayVehicleTypes()">
-				<img src="./car_type_1.png" width="215" height="160" alt="">
-				<div class="dealer_tag">
-					<h4>STATION WAGON</h4>
-				</div>
-			</div>	
-			<div class="car_type" onclick="displayVehicleTypes()">
-				<img src="./car_type_2.png" width="215" height="160" alt="">
-				<div class="dealer_tag">
-					<h4>SALOON CAR</h4>
-				</div>
-			</div>	
-			<div class="car_type" onclick="displayVehicleTypes()">
-				<img src="./car_type_3.png" width="215" height="160" alt="">
-				<div class="dealer_tag">
-					<h4>4WD CARS</h4>
-				</div>
-			</div>	
-			<div class="car_type" onclick="displayVehicleTypes()">
-				<img src="./car_type_4.png" width="215" height="160" alt="">
-				<div class="dealer_tag">
-					<h4>4WD CARS</h4>
-				</div>
-			</div>	
-			<div class="car_type">
-				<img src="./car_type_5.webp" width="215" height="160" alt="">
-				<div class="dealer_tag">
-					<h4>ELECTRIC CARS</h4>
-				</div>
-			</div>
-		</div>
-		<!-----------------------SECTION SEPARATOR--------------------------------->
-		<div class="section_separator">
-			
-				<h3>Location</h3>
-				
-		</div>
-		<!-----------------------BRANCH LOCATIONS--------------------------------->
-		<div class="locations">
-			<img src="./location_icon.jpg" alt="" width="50" height="50">
-			<h3>Kisumu</h3>
+		
+		
+		
 
-			<img src="./location_icon.jpg" alt="" width="50" height="50">
-			<h3>Nairobi</h3>
-
-			<img src="./location_icon.jpg" alt="" width="50" height="50">
-			<h3>Mombasa</h3>
-
-			<img src="./location_icon.jpg" alt="" width="50" height="50">
-			<h3>Nakuru</h3>
-
-			<img src="./location_icon.jpg" alt="" width="50" height="50">
-			<h3>Eldoret</h3>
-
-			<img src="./location_icon.jpg" alt="" width="50" height="50">
-			<h3>Thika</h3>
-
-			<img src="./location_icon.jpg" alt="" width="50" height="50">
-			<h3>Lamu</h3>
-
-			<img src="./location_icon.jpg" alt="" width="50" height="50">
-			<h3>Kisii</h3>
-
-			<img src="./location_icon.jpg" alt="" width="50" height="50">
-			<h3>Meru</h3>
-
-			<img src="./location_icon.jpg" alt="" width="50" height="50">
-			<h3>Murang'a</h3>
-		</div>
-		<!-----------------------SECTION SEPARATOR--------------------------------->
-		<div id="reviews_section" class="section_separator">
-			
-				<h3>Reviews</h3>
-				
-		</div>
-		<!--------------------------Reviews---------------------------------------->
-		<div class="review_items">
-			<div class="review"><p>This website is amazing, I bought a second-hand vehicle in good condition </p></div>
-			<div class="review_2"><p>For anyone looking for a fast way to purchase, this is the place</p></div>
-		</div>
-		<!-----------------------SECTION SEPARATOR--------------------------------->
-		<div id="blogs" class="section_separator">
-			
-				<h3>Out Latest Posts</h3>
-				
-		</div>
 		<!-----------------------NEWS BYTES--------------------------------->
 		<div class="posts">
-			<div id="my details" class="news_bytes">
-				<img src="" alt="owner" width="300" height="300">
-				<p>Hello world</p>
-			</div>
 			<div class="card">
 				<img src="./post_1.png" width="250" height="150" alt="">
 				<div class="container">
@@ -540,264 +386,14 @@
 				</div>
 			</div>
 		</div>
-		<!-----------------------SECTION SEPARATOR--------------------------------->
-		<div class="section_separator">
-			
-				<h3>Contact Us</h3>
-				
-		</div>
-		<!------------------------------CONTACT US-------------------------------->
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+			<path fill="#007700" fill-opacity="1" d="M0,256L34.3,224C68.6,192,137,128,206,133.3C274.3,139,343,213,411,229.3C480,245,549,203,617,160C685.7,117,754,75,823,96C891.4,117,960,203,1029,208C1097.1,213,1166,139,1234,96C1302.9,53,1371,43,1406,37.3L1440,32L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+		</svg>
 		<div id="contact_us">
-			<div class="card">
-				<img src="./instagram.png" width="150" height="150" alt="">
-				<div id="gram">
-					<h3>@silas.n_</h3>
-				</div>
-			</div>
-			<div id="details_card" class="card">
-				<img src="./facebook.png" width="200" height="150" alt="">
-				<div id="gram">
-					<h3>@Silas Nyamwange</h3>
-				</div>
-			</div>	
+				<img src="./instagram.png" width="100" height="100" alt="">
+				<img src="./facebook.png" width="100" height="100" alt="">
 		</div>
 	</div>
 </body>
-<script type="text/javascript">
-	
-	let items_arr = new Array()
-	let item_id_to_add = 0 
-	let popupIsShowing = false
-	let users = new Array()
-	let isLoggedIn
-	document.getElementById("defaultOpen").click()
-
-	function openOption(carState,elemnt,color){
-		var i, tabcontent, tablinks
-
-		tabcontent = document.getElementsByClassName("tabcontent")
-		for (i = 0; i < tabcontent.length; i++) {
-			tabcontent[i].style.display = "none"
-		}
-
-		tablinks = document.getElementsByClassName("tablink")
-		for (i = 0; i < tablinks.length; i++) {
-			tablinks[i].style.backgroundColor = ""
-		}
-
-		document.getElementById(carState).style.display = "block"
-		elemnt.style.backgroundColor = color
-
-	}
-	function getUsers(){
-		var str = localStorage.getItem("local_items")
-		if(str != null){
-			items_arr = JSON.parse(str)
-		}
-
-	}
-
-	function getId(){
-		var str = localStorage.getItem("local_item_to_add")
-		if(str != null){
-			item_id_to_add = JSON.parse(str)
-		}
-	}
-
-	function getCardItem(){
-		getItems()
-		var search_item_name = document.getElementById("input#item_name").value
-		for(var i = 0; i < items_arr.length; i++){
-			if (items_arr[i].item_name == search_item_name)
-				var item_id = items_arr[i].item_id
-		}
-		return item_id		
-	}
-
-	function setCardItem(){
-		let item_id = `SN${Math.floor(Math.random(100))}`
-		items_arr.push({
-			item_id: item_id,
-			item_price: document.getElementById("input#item_price").value,
-			item_name: document.getElementById("input#item_name").value
-		})
-		localStorage.setItem("local_items", JSON.stringify(items_arr))
-		localStorage.setItem("local_item_to_add", JSON.stringify(items_id))
-	}
-
-	function showCardItem(){
-		getItems()
-		getId()
-		let item_price = 0
-		let item_name = ""
-		for(var i = 0; i < items_arr.length; i++){
-			if(items_arr[i].item_id == item_id_to_add){
-				item_price = items_arr[i].item_price
-				item_name = items_arr[i].item_name
-			}
-		}
-		document.getElementById("card_collection_1").innerHTML = ( 
-		'<div class="card_view_item">'+'center'+
-			'<p>item price"+`${item_price}`</p>'+
-			'<p>item name"+`${item_name}`</p>'+
-			'<p>item id"+`${item_id_to_add}`</p>'+
-			'</center>'+
-		'</div>')
-	}
-
-	function display_login(){
-		if(popupIsShowing === false){
-			document.getElementById("login_form").style.display = "inline"
-			popupIsShowing = true
-		} else {
-			document.getElementById("login_form").style.display = "none"
-			popupIsShowing = false
-		}
-	}
-
-	function getUsersDetails(){
-		let str = localStorage.getItem("usersRegistered")
-		if(str != null){
-			users = JSON.parse(str)
-		} 
-	}
-	function authenticate_login(){
-		getUsersDetails()
-		let login_usr_name_or_email = document.getElementById("login_usr_name_or_email").value
-		let login_usr_pass = document.getElementById("login_usr_pass").value
-		for(let i = 0; i < users.length; i++){
-			if(users[i].usr_email === login_usr_name_or_email || users[i].usr_name === login_usr_name_or_email){
-				users[i].isLoggedIn = true
-				console.log("logged in as ", users[i].usr_name)
-				document.getElementById("login_form").style.display = "none"
-				isLoggedIn = users[i].usr_name
-			}
-			else{
-				document.getElementById("var_err").innerHTML = "Incorrect username or password"
-			}
-		}
-		document.getElementById("login_details_form").reset()
-		display_login_name()
-	}
-
-	function register_user(){
-		getUsersDetails()
-		let usr_fname = document.getElementById("usr_fname").value
-		let usr_lname = document.getElementById("usr_lname").value
-		let usr_name = document.getElementById("usr_name").value
-		let usr_email = document.getElementById("usr_email").value
-		let usr_pass = document.getElementById("usr_pass").value
-		let usr_pass_confirm = document.getElementById("usr_pass_confirm").value
-		users.push({
-			usr_fname: usr_fname,
-			usr_lname: usr_lname,
-			usr_name: usr_name,
-			usr_email: usr_email,
-			usr_pass: usr_pass,
-			isLoggedIn: false
-		})
-		localStorage.setItem("usersRegistered", JSON.stringify(users))
-		document.getElementById("register_form").style.display = "none"
-		document.getElementById("register_details_form").reset()
-		console.log("registered as ", usr_name)
-		
-	}
-	
-	function display_registration(){
-		if(popupIsShowing === false){
-			document.getElementById("register_form").style.display = "inline"
-			popupIsShowing = true
-		} else {
-			document.getElementById("register_form").style.display = "none"
-			popupIsShowing = false
-		}
-	}
-	function display_dealer_login(){
-		if(popupIsShowing === false){
-			document.getElementById("dealer_form").style.display = "inline"
-			popupIsShowing = true
-		} else {
-			document.getElementById("dealer_form").style.display = "none"
-			popupIsShowing = false
-		}
-	}
-	function display_car_loan_form(){
-		if(popupIsShowing === false){
-			document.getElementById("car_loans_form").style.display = "inline"
-			popupIsShowing = true
-		} else {
-			document.getElementById("car_loans_form").style.display = "none"
-			popupIsShowing = false
-		}
-	}
-	function display_insurers(){
-		if(popupIsShowing === false){
-			document.getElementById("insurance_form").style.display = "inline"
-			popupIsShowing = true
-		} else {
-			document.getElementById("insurance_form").style.display = "none"
-			popupIsShowing = false
-		}
-	}
-	function display_login_name(){
-		getUsersDetails()
-		for(let i = 0; i < users.length; i++){
-			if(users[i].usr_name === isLoggedIn){
-				document.getElementById("loggedIn").innerHTML ="Welcome, " +users[i].usr_fname
-			}
-		}
-	}
-
-	function showRequestCarForm(){
-		if(popupIsShowing === false){
-			document.getElementById("car_loans_form_8").style.display = "inline"
-			popupIsShowing = true
-		} else {
-			document.getElementById("car_loans_form_8").style.display = "none"
-			popupIsShowing = false
-		}
-	}
-
-	function showSellCarForm(){
-		if(popupIsShowing === false){
-			document.getElementById("car_loans_form_10").style.display = "inline"
-			popupIsShowing = true
-		} else {
-			document.getElementById("car_loans_form_10").style.display = "none"
-			popupIsShowing = false
-		}
-	}
-
-	function displayMain(){
-		if(popupIsShowing === false){
-			document.getElementById("popup").style.display = "inline"
-			popupIsShowing = true
-		} else {
-			document.getElementById("popup").style.display = "none"
-			popupIsShowing = false
-		}
-	}
-
-	function displayDealer(){
-		if(popupIsShowing === false){
-			document.getElementById("dealer_popup").style.opacity = "1"
-			document.getElementById("dealer_popup").style.visibility = "visible"
-			popupIsShowing = true
-		} else {
-			document.getElementById("dealer_popup").style.opacity = "0"
-			document.getElementById("dealer_popup").style.visibility = "hidden"
-			popupIsShowing = false
-		}
-	}
-
-	function displayVehicleTypes(){
-		if(popupIsShowing === false){
-			document.getElementById("vehicle_type_popup").style.display = "inline"
-			popupIsShowing = true
-		} else {
-			document.getElementById("vehicle_type_popup").style.display = "none"
-			popupIsShowing = false
-		}
-	}
-</script>
+<script type="text/javascript" src="./index.js"></script>
 </html>
