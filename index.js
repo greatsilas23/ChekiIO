@@ -1,5 +1,5 @@
 /* Date created: 23rd March
-   Date modified: 
+   Date modified: 31 May
 */
 
 let items_arr = new Array()
@@ -7,6 +7,80 @@ let item_id_to_add = 0
 let popupIsShowing = false
 let users = new Array()
 let isLoggedIn
+class canvas{
+    constructor(){
+        this.v = `<section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 10px; left: 210px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 10px; left: 230px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 10px; left: 250px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 10px; left: 270px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 10px; left: 290px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 10px; left: 310px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 10px; left: 330px; background-color: white; border: solid 2px black;"></section>
+        
+        <section   style="width: 20px; height: 20px; position: absolute; top: 30px; left: 210px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 30px; left: 230px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 30px; left: 250px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 30px; left: 270px; background-color: white; border: solid 2px black;"></section>      
+        <section   style="width: 20px; height: 20px; position: absolute; top: 30px; left: 290px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 30px; left: 310px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 30px; left: 330px; background-color: white; border: solid 2px black;"></section>
+      
+        <section   style="width: 20px; height: 20px; position: absolute; top: 50px; left: 210px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 50px; left: 230px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 50px; left: 250px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 50px; left: 270px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 50px; left: 290px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 50px; left: 310px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 50px; left: 330px; background-color: white; border: solid 2px black;"></section>
+      
+      
+        <section   style="width: 20px; height: 20px; position: absolute; top: 70px; left: 210px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 70px; left: 230px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 70px; left: 250px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 70px; left: 270px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 70px; left: 290px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 70px; left: 310px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 70px; left: 330px; background-color: white; border: solid 2px black;"></section>
+      
+        <section   style="width: 20px; height: 20px; position: absolute; top: 90px; left: 210px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 90px; left: 230px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 90px; left: 250px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 90px; left: 270px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 90px; left: 290px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 90px; left: 310px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 90px; left: 330px; background-color: white; border: solid 2px black;"></section>
+      
+        <section   style="width: 20px; height: 20px; position: absolute; top: 110px; left: 210px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 110px; left: 230px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 110px; left: 250px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 110px; left: 270px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 110px; left: 290px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 110px; left: 310px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 110px; left: 330px; background-color: white; border: solid 2px black;"></section>
+      
+        <section   style="width: 20px; height: 20px; position: absolute; top: 130px; left: 210px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 130px; left: 230px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 130px; left: 250px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 130px; left: 270px; background-color: black; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 130px; left: 290px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 130px; left: 310px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 130px; left: 330px; background-color: white; border: solid 2px black;"></section>
+        
+        <section   style="width: 20px; height: 20px; position: absolute; top: 150px; left: 210px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 150px; left: 230px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 150px; left: 250px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 150px; left: 270px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 150px; left: 290px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 150px; left: 310px; background-color: white; border: solid 2px black;"></section>
+        <section   style="width: 20px; height: 20px; position: absolute; top: 150px; left: 330px; background-color: white; border: solid 2px black;"></section>
+        
+      </section>`
+    }
+
+}
+document.querySelector('body').innerHTML += new canvas().v
+      
 document.getElementById("defaultOpen").click()
 
 function openOption(carState,elemnt,color){
