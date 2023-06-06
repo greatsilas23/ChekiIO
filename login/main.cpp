@@ -7,19 +7,23 @@ void login();
 
 char fillLine(int init, int fin, int height){
 
-int result;
+
         for(int j = 0; j <= height; j = j + 20){
      for(int i =init; i <= fin; i = i + 20){
-            result = 0;
+            return '0';
         }
     }
-    return result;
+
 }
 void line(int a, int b, int height){
     int initA = 0;
     while(initA <= height){
             while(a <= b){
-                cout << "%.0f, fillLine(a, b, intA)" << endl;
+                cout << "(" << endl;
+                cout <<  a << endl;
+                cout << b<< endl;
+                cout << (a+1)<< endl;
+                cout << ")" << endl;
                 a++;
             }
             initA++;
