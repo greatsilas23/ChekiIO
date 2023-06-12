@@ -1,0 +1,20 @@
+{
+  {
+    id: "a",
+    name: "item"
+    description: "New",
+    descriptionId: ""
+  },
+  {
+    id: "b",
+    name: "",
+    description: "Used",
+    descriptionId: ""
+  },
+  {
+    id: "c",
+    name: "",
+    description: "",
+    descriptionId: ""
+}
+
