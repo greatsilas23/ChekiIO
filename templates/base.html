@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}AfriAuto{% endblock %} | AfriAuto</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="wrap header-row">
+        <a class="brand" href="{{ url_for('index') }}"><i class="fa-solid fa-car-side"></i> AfriAuto</a>
+        <nav class="main-nav">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('cars') }}">Browse cars</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+        <a href="{{ url_for('cars') }}" class="btn btn-primary">Find a car</a>
+    </div>
+</header>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <div class="wrap flash-wrap">
+    {% for category, message in messages %}
+      <div class="flash flash-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endwith %}
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+    <div class="wrap footer-row">
+        <div>
+            <div class="brand">AfriAuto</div>
+            <p>Buy and sell quality vehicles across Kenya. All prices in Kenyan Shillings (KES).</p>
+        </div>
+        <div>
+            <h4>Explore</h4>
+            <a href="{{ url_for('cars') }}">Browse cars</a>
+            <a href="{{ url_for('contact') }}">Contact sales</a>
+        </div>
+        <div>
+            <h4>Get in touch</h4>
+            <p>Nairobi, Kenya<br>+254 700 123 456<br>info@afriauto.co.ke</p>
+        </div>
+    </div>
+    <div class="wrap copyright">&copy; 2026 AfriAuto. Prices in Kenyan Shillings (KES).</div>
+</footer>
+
+</body>
+</html>

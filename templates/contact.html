@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<section class="wrap section auth-wrap">
+    <div class="auth-card">
+        <h2>Get in touch</h2>
+        <p class="muted">Have a question, or want to sell your car? Send us a message.</p>
+        <form method="post">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" rows="4" placeholder="How can we help?" required></textarea>
+            <button class="btn btn-primary btn-block" type="submit">Send message</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

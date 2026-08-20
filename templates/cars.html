@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Browse cars{% endblock %}
+{% block content %}
+<section class="wrap section">
+    <div class="section-head"><h2>Browse cars</h2></div>
+
+    <form action="{{ url_for('cars') }}" method="get" class="filter-bar">
+        <input type="text" name="q" placeholder="Search make or model&hellip;" value="{{ q }}">
+        <select name="make">
+            <option value="">Any make</option>
+            {% for m in makes %}<option value="{{ m }}" {{ 'selected' if m == active_make }}>{{ m }}</option>{% endfor %}
+        </select>
+        <select name="price">
+            <option value="">Any price</option>
+            <option value="0-500k" {{ 'selected' if active_price=='0-500k' }}>Under KES 500,000</option>
+            <option value="500k-1m" {{ 'selected' if active_price=='500k-1m' }}>KES 500,000 &ndash; 1M</option>
+            <option value="1m-2m" {{ 'selected' if active_price=='1m-2m' }}>KES 1M &ndash; 2M</option>
+            <option value="2m-5m" {{ 'selected' if active_price=='2m-5m' }}>KES 2M &ndash; 5M</option>
+            <option value="5m+" {{ 'selected' if active_price=='5m+' }}>Over KES 5M</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Filter</button>
+    </form>
+
+    <div class="chip-row">
+        <a href="{{ url_for('cars', q=q, make=active_make, price=active_price) }}" class="chip {{ 'chip-active' if active_type=='All' }}">All</a>
+        {% for t in types %}
+        <a href="{{ url_for('cars', type=t, q=q, make=active_make, price=active_price) }}" class="chip {{ 'chip-active' if t==active_type }}">{{ t }}</a>
+        {% endfor %}
+    </div>
+
+    <div class="car-grid">
+        {% for car in cars %}{% include "_car_card.html" %}{% endfor %}
+        {% if not cars %}<p class="muted">No cars match those filters. Try widening your search.</p>{% endif %}
+    </div>
+</section>
+{% endblock %}

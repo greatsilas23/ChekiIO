@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<section class="hero">
+    <div class="wrap">
+        <span class="eyebrow">Nairobi &middot; Mombasa &middot; Kisumu &middot; Nakuru</span>
+        <h1>Find your next car<br>at the right price.</h1>
+        <p>Thousands of inspected new &amp; used vehicles across Kenya. All prices in KES, no surprises.</p>
+
+        <form action="{{ url_for('cars') }}" method="get" class="search-box">
+            <select name="make">
+                <option value="">Any make</option>
+                {% for m in makes %}<option value="{{ m }}">{{ m }}</option>{% endfor %}
+            </select>
+            <select name="price">
+                <option value="">Any price</option>
+                <option value="0-500k">Under KES 500,000</option>
+                <option value="500k-1m">KES 500,000 &ndash; 1M</option>
+                <option value="1m-2m">KES 1M &ndash; 2M</option>
+                <option value="2m-5m">KES 2M &ndash; 5M</option>
+                <option value="5m+">Over KES 5M</option>
+            </select>
+            <input type="text" name="q" placeholder="Search make or model&hellip;">
+            <button class="btn btn-primary" type="submit">Search cars</button>
+        </form>
+    </div>
+</section>
+
+<section class="wrap section">
+    <div class="section-head">
+        <h2>Featured cars</h2>
+        <a href="{{ url_for('cars') }}" class="see-all">Browse all &rarr;</a>
+    </div>
+    <div class="car-grid">
+        {% for car in featured %}{% include "_car_card.html" %}{% endfor %}
+    </div>
+</section>
+
+<section class="wrap section">
+    <div class="section-head"><h2>Recently added</h2></div>
+    <div class="car-grid">
+        {% for car in recent %}{% include "_car_card.html" %}{% endfor %}
+    </div>
+</section>
+
+{% endblock %}

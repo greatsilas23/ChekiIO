@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<section class="wrap section">
+    <h1>AfriAuto Dashboard</h1>
+    <p class="muted" style="font-size:13px;">Price model in-sample R²: {{ model_r2 }}</p>
+
+    <div class="spec-grid" style="margin:24px 0;">
+        <div class="stat-card"><span class="muted">Total Listings</span><strong style="font-size:28px;">{{ total_cars }}</strong></div>
+        <div class="stat-card"><span class="muted">Total Bids</span><strong style="font-size:28px;">{{ total_bids }}</strong></div>
+        <div class="stat-card"><span class="muted">Total Inquiries</span><strong style="font-size:28px;">{{ total_inquiries }}</strong></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:32px;">
+        <div>
+            <h3>Average Price by Make</h3>
+            <canvas id="priceChart" height="220"></canvas>
+        </div>
+        <div>
+            <h3>Listings by Body Type</h3>
+            <canvas id="bodyChart" height="220"></canvas>
+        </div>
+    </div>
+
+    <h3>Most-Bid-On Cars</h3>
+    <table class="table" style="width:100%; margin-bottom:32px;">
+        <thead><tr><th>Car</th><th>Bids</th><th>Highest Bid (KES)</th></tr></thead>
+        <tbody>
+        {% for car, high_bid, bid_count in top_bid_cars %}
+            <tr>
+                <td><a href="{{ url_for('car_detail', car_id=car.id) }}">{{ car.year }} {{ car.make }} {{ car.model }}</a></td>
+                <td>{{ bid_count }}</td>
+                <td>{{ '{:,.0f}'.format(high_bid) }}</td>
+            </tr>
+        {% else %}
+            <tr><td colspan="3" class="muted">No bids yet.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Recent Bids</h3>
+    <table class="table" style="width:100%;">
+        <thead><tr><th>Bidder</th><th>Car</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
+        <tbody>
+        {% for b in recent_bids %}
+            <tr>
+                <td>{{ b.bidder_name }}</td>
+                <td>{{ b.car.year }} {{ b.car.make }} {{ b.car.model }}</td>
+                <td>KES {{ '{:,.0f}'.format(b.amount) }}</td>
+                <td>{{ b.status }}</td>
+                <td>{{ b.created_at.strftime('%Y-%m-%d') }}</td>
+            </tr>
+        {% else %}
+            <tr><td colspan="5" class="muted">No bids yet.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script>
+new Chart(document.getElementById('priceChart'), {
+    type: 'bar',
+    data: {
+        labels: [{% for make, avg in avg_price_by_make %}"{{ make }}",{% endfor %}],
+        datasets: [{
+            label: 'Avg Price (KES)',
+            data: [{% for make, avg in avg_price_by_make %}{{ avg|round(0) }},{% endfor %}],
+            backgroundColor: '#c0392b'
+        }]
+    },
+    options: { plugins: { legend: { display: false } } }
+});
+
+new Chart(document.getElementById('bodyChart'), {
+    type: 'doughnut',
+    data: {
+        labels: [{% for body, count in cars_by_body_type %}"{{ body }}",{% endfor %}],
+        datasets: [{
+            data: [{% for body, count in cars_by_body_type %}{{ count }},{% endfor %}],
+            backgroundColor: ['#c0392b','#e67e22','#f1c40f','#27ae60','#2980b9','#8e44ad']
+        }]
+    }
+});
+</script>
+{% endblock %}
